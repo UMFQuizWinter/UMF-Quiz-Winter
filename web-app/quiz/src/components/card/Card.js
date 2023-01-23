@@ -16,10 +16,10 @@ export const CardQuiz = (props) => {
   const [selectedAnswers, setSelectedAnswers] = useState([]);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  // const jsonLink = `../../UMF-Quiz-Winter/${subject}.json`
+  const jsonLink = `../../UMF-Quiz-Winter/data.json`
   const refreshPath = `#/UMF-Quiz-Winter/card/${subject}`
 
-  let jsonLink = "http://localhost:3000/UMF-Quiz-Winter/data.json"
+  // let jsonLink = "http://localhost:3000/UMF-Quiz-Winter/data.json"
 
   useEffect(() => {
     // retrieve data from JSON file
