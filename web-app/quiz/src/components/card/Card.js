@@ -12,7 +12,7 @@ export const CardQuiz = () => {
 
   useEffect(() => {
     // retrieve data from JSON file
-    fetch("data.json")
+    fetch("./UMF-Quiz-Winter/data.json")
       .then((res) => res.json())
       .then((data) => {
         console.log(data)
