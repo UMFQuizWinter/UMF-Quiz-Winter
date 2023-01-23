@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Typography } from "@material-ui/core";
 import "./Card.css";
 import Logo from './logo.png'
+import Link from 'react'
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
 </style>
@@ -16,7 +17,7 @@ export const CardQuiz = (props) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   // let jsonLink = "../../UMF-Quiz-Winter/data.json"
-  let jsonLink = "../data.json"
+  let jsonLink = "data.json"
 
   useEffect(() => {
     // retrieve data from JSON file
@@ -89,8 +90,6 @@ export const CardQuiz = (props) => {
   const handleNextQuestion = () => {
     setSelectedAnswers([]);
     setIsSubmitted(false);
-    window.location.reload();
-    
   }
 
   return (
@@ -121,10 +120,16 @@ export const CardQuiz = (props) => {
               ))}
             </div>
             <div className="buttons-down-container">
-              <button className="button-down" onClick={isSubmitted ? handleNextQuestion : handleSubmit}>
+              <button className="button-down" hidden={isSubmitted ? true : false} onClick={handleSubmit}>
                 {isSubmitted ? "Next Question" : "Submit"}
               </button>
-              <button className="button-down" onClick={handleClearAnswers}>Clear Answers</button>
+              <button className="button-down" onClick={handleClearAnswers} hidden={isSubmitted ? true : false}>Clear Answers</button>
+              <button className="button-down" hidden={isSubmitted ? false : true} onClick={handleNextQuestion}>
+                  <a href="/UMF-Quiz-Winter/card/anato">
+                     Next Question
+                  </a>
+              </button>
+
             </div>
           </div>
         </div>
