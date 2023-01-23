@@ -69,9 +69,14 @@ export const CardQuiz = () => {
     }
     return false;
   }
-
+  const cuteAlerts = ["You're doing great! Keep going!", "Acesta este semnul tau ca vei trece la anatomie.", "Gandeste-te doar la cat o sa bei dupa sesiune..."]
   const handleSubmit = () => {
     setIsSubmitted(true);
+    const randomAlertIndex = Math.floor(Math.random() * cuteAlerts.length);
+    if(randomIndex % 13 == 0){
+        console.log("divizibil cu 13!", randomIndex)
+        alert(cuteAlerts[randomAlertIndex])
+    }
   };
   const handleClearAnswers = () => {
     setSelectedAnswers([])
