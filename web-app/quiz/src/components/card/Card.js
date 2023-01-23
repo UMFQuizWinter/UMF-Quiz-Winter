@@ -16,8 +16,10 @@ export const CardQuiz = (props) => {
   const [selectedAnswers, setSelectedAnswers] = useState([]);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  // let jsonLink = "../../UMF-Quiz-Winter/data.json"
-  let jsonLink = "../data.json"
+  // const jsonLink = `../../UMF-Quiz-Winter/${subject}.json`
+  const refreshPath = `#/UMF-Quiz-Winter/card/${subject}`
+
+  let jsonLink = "http://localhost:3000/UMF-Quiz-Winter/data.json"
 
   useEffect(() => {
     // retrieve data from JSON file
@@ -125,8 +127,8 @@ export const CardQuiz = (props) => {
               </button>
               <button className="button-down" onClick={handleClearAnswers} hidden={isSubmitted ? true : false}>Clear Answers</button>
               <button className="button-down" hidden={isSubmitted ? false : true} onClick={handleNextQuestion}>
-                  <a href="/UMF-Quiz-Winter/card/anato">
-                     Next Questiona
+                  <a href={refreshPath}>
+                     Next Question
                   </a>
               </button>
 
