@@ -126,7 +126,7 @@ export const CardQuiz = (props) => {
               <button className="button-down" onClick={handleClearAnswers} hidden={isSubmitted ? true : false}>Clear Answers</button>
               <button className="button-down" hidden={isSubmitted ? false : true} onClick={handleNextQuestion}>
                   <a href="/UMF-Quiz-Winter/card/anato">
-                     Next Question
+                     Next Questiona
                   </a>
               </button>
 
