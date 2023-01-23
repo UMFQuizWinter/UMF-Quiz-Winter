@@ -111,3 +111,14 @@ button{
     justify-content: center;
     /* padding: 1em; */
 }
+.subject-title{
+    background-color: rgba(0,0,0,0.7);
+    color: white;
+    text-align: center;
+    padding: 2em;
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-top: -1.5em;
+    font-family: 'Roboto', sans-serif;
+
+}

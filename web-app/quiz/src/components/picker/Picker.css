@@ -1,0 +1,23 @@
+.subject-button{
+    height: 5em;
+    width: 16em;
+}
+.page{
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.image-container{
+    display: flex;
+    justify-content: center;
+    padding: 2em;
+}
+a{
+    text-decoration: none;
+}
+.subject-button{
+    background-color: rgba(255, 255, 255, 0.5);
+    font-size: large
+}

@@ -2,20 +2,26 @@ import React, { useState, useEffect } from "react";
 import { Typography } from "@material-ui/core";
 import "./Card.css";
 import Logo from './logo.png'
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+</style>
 
-export const CardQuiz = () => {
+
+export const CardQuiz = (props) => {
+  const subject = props.subject;
+  console.log("sub: ", subject) 
   const [question, setQuestion] = useState("");
   const [answers, setAnswers] = useState([]);
   const [selectedAnswers, setSelectedAnswers] = useState([]);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
+  let jsonLink = "../../UMF-Quiz-Winter/data.json"
 
   useEffect(() => {
     // retrieve data from JSON file
-    fetch("./UMF-Quiz-Winter/data.json")
+    fetch(jsonLink)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
         // pick a random question from the data
         const randomIndex = Math.floor(Math.random() * data.entries.length);
         setQuestion(data.entries[randomIndex].Question.toString());
@@ -30,7 +36,6 @@ export const CardQuiz = () => {
             if (answer.correct) atLeastOneTrue = true;
           });
         }
-        // console.log(randomAnswers[4].ans);
         setAnswers(randomAnswers);
       });
   }, []);
@@ -86,13 +91,15 @@ export const CardQuiz = () => {
     window.location.reload();
     
   }
-//   console.log("isSubmitted: ", isSubmitted, "\n")
 
   return (
     <div className="page-container">
       <div className="card">
         <div className="card-content">
           <div className="card-container">
+            <div className="subject-title">
+              {subject === "anato" ? "Anatomie" : "Diabet"}
+            </div>
             <div className="logo">
                 <img src={Logo} style={{width: "35%", maxWidth: "300px"}}></img>
             </div>

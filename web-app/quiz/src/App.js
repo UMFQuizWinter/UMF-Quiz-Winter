@@ -1,10 +1,17 @@
 import './App.css';
-import Header from './components/header/Header'
+import { Routes, Route } from "react-router-dom"
 import Card from './components/card/Card'
+import Picker from './components/picker/Picker'
+
 function App() {
   return (
     <>
-    <Card />
+    <Routes>
+        <Route path="/UMF-Quiz-Winter" element={ <Picker/> } />
+        <Route path="/UMF-Quiz-Winter/card/anato" element={ <Card subject="anato"/> } />
+        <Route path="/UMF-Quiz-Winter/card/diabet" element={ <Card subject="diabet"/> } />
+        <Route path="*" element={ <Picker/> } />
+      </Routes>
     </>
   );
 }
