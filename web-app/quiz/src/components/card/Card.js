@@ -15,12 +15,10 @@ export const CardQuiz = () => {
     fetch("data.json")
       .then((res) => res.json())
       .then((data) => {
-        console.log('aa')
+        console.log(data)
         // pick a random question from the data
         const randomIndex = Math.floor(Math.random() * data.entries.length);
         setQuestion(data.entries[randomIndex].Question.toString());
-        console.log('aaa', question)
-
         // pick 5 random answers from the question's possible answers
         let atLeastOneTrue = false;
         let randomAnswers = [];
@@ -61,10 +59,10 @@ export const CardQuiz = () => {
   }
 
   const isAnswerCorrect = (answer) => {
-    if(isAnswerClicked(answer) && answer.correct=="true"){
+    if(isAnswerClicked(answer) && answer.correct==="true"){
         return true;
     }
-    if(!isAnswerClicked(answer) && answer.correct=="false"){ 
+    if(!isAnswerClicked(answer) && answer.correct==="false"){ 
         return true; 
     }
     return false;
@@ -75,7 +73,7 @@ export const CardQuiz = () => {
     setIsSubmitted(true);
     const randomIndex = Math.floor(Math.random() * 4400);
     const randomAlertIndex = Math.floor(Math.random() * cuteAlerts.length);
-    if(randomIndex % 13 == 0){
+    if(randomIndex % 13 === 0){
         alert(cuteAlerts[randomAlertIndex])
     }
   };
