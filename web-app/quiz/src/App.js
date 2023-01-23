@@ -1,8 +1,11 @@
 import './App.css';
-
+import Header from './components/header/Header'
+import Card from './components/card/Card'
 function App() {
   return (
-    <h1>Hello</h1>
+    <>
+    <Card />
+    </>
   );
 }
 
