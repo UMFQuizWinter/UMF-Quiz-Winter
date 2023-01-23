@@ -16,7 +16,7 @@ export const CardQuiz = (props) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   // let jsonLink = "../../UMF-Quiz-Winter/data.json"
-  let jsonLink = "data.json"
+  let jsonLink = "../data.json"
 
   useEffect(() => {
     // retrieve data from JSON file
