@@ -18,8 +18,6 @@ export const CardQuiz = (props) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const jsonLink = `../../UMF-Quiz-Winter/${subject}.json`
-  // const refreshPath = `#/UMF-Quiz-Winter/card/${subject}`
-
   // let jsonLink = `http://localhost:3000/UMF-Quiz-Winter/${subject}.json`
 
   useEffect(() => {
