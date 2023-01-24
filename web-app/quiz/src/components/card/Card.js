@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Typography } from "@material-ui/core";
 import "./Card.css";
 import Logo from './logo.png'
+import Header from '../header/Header'
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
 </style>
+
 
 
 export const CardQuiz = (props) => {
@@ -88,24 +90,17 @@ export const CardQuiz = (props) => {
   const handleClearAnswers = () => {
     setSelectedAnswers([])
   }
-  const handleNextQuestion = () => {
-    setSelectedAnswers([]);
-    setIsSubmitted(false);
-  }
   const reloadPage = () => {
     window.location.reload()
   }
 
   return (
+    <>
+    <Header subject={subject}/>
     <div className="page-container">
-      <div className="card">
-        <div className="card-content">
           <div className="card-container">
-            <div className="subject-title">
-              {subject === "anato" ? "Anatomie" : "Diabet"}
-            </div>
             <div className="logo">
-                <img src={Logo} style={{width: "35%", maxWidth: "300px"}}></img>
+                <img src={Logo} alt="logo" style={{width: "35%", maxWidth: "300px"}}></img>
             </div>
             <div className="question">
               <Typography variant="h5">{question}</Typography>
@@ -128,17 +123,13 @@ export const CardQuiz = (props) => {
                 {isSubmitted ? "Next Question" : "Submit"}
               </button>
               <button className="button-down" onClick={handleClearAnswers} hidden={isSubmitted ? true : false}>Clear Answers</button>
-              {/* <a href={refreshPath}> */}
-              <button className="button-down" hidden={isSubmitted ? false : true} onClick={reloadPage}>
-                  
+              <button className="button-down" hidden={isSubmitted ? false : true} onClick={reloadPage}>        
                      Next Question
               </button>
-                  {/* </a> */}
             </div>
           </div>
         </div>
-      </div>
-    </div>
+        </>
   );
 };
 

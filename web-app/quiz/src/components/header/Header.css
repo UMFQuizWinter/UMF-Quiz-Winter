@@ -1,0 +1,18 @@
+.subject{
+    color: white;
+    text-align: right;
+    padding: 1.5em;
+    font-size: 1em;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+
+}
+.header-container{
+    display: flex;
+    background: linear-gradient(137deg, rgba(120,15,200,1) 0%, rgba(70,0,150,1) 57%);
+    align-items: center;
+    padding-left: 1em;
+}
+.back-icon{
+    filter:invert(1);
+}

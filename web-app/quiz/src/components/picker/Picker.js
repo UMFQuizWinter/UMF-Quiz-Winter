@@ -6,9 +6,9 @@ import "./Picker.css";
 export const Picker = () => {
   return (
     <>
-    <div className="page-container">
+    <div className="main-container">
         <div className="image-container">
-        <img src={Logo} style={{width: "60%", maxWidth: "300px"}}></img> 
+        <img src={Logo} alt="logo" style={{width: "60%", maxWidth: "300px"}}></img> 
         </div>
         <div className="page">
         <button className="subject-button">
