@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Typography } from "@material-ui/core";
 import "./Card.css";
 import Logo from './logo.png'
-import Link from 'react'
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
 </style>
@@ -16,10 +15,10 @@ export const CardQuiz = (props) => {
   const [selectedAnswers, setSelectedAnswers] = useState([]);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const jsonLink = `../../UMF-Quiz-Winter/data.json`
-  const refreshPath = `#/UMF-Quiz-Winter/card/${subject}`
+  const jsonLink = `../../UMF-Quiz-Winter/${subject}.json`
+  // const refreshPath = `#/UMF-Quiz-Winter/card/${subject}`
 
-  // let jsonLink = "http://localhost:3000/UMF-Quiz-Winter/data.json"
+  // let jsonLink = `http://localhost:3000/UMF-Quiz-Winter/${subject}.json`
 
   useEffect(() => {
     // retrieve data from JSON file
@@ -42,7 +41,7 @@ export const CardQuiz = (props) => {
         }
         setAnswers(randomAnswers);
       });
-  }, []);
+  }, [jsonLink]);
 
   //function to remove selected answers from array
   function removeElement(arr, element) {
@@ -93,6 +92,9 @@ export const CardQuiz = (props) => {
     setSelectedAnswers([]);
     setIsSubmitted(false);
   }
+  const reloadPage = () => {
+    window.location.reload()
+  }
 
   return (
     <div className="page-container">
@@ -126,12 +128,12 @@ export const CardQuiz = (props) => {
                 {isSubmitted ? "Next Question" : "Submit"}
               </button>
               <button className="button-down" onClick={handleClearAnswers} hidden={isSubmitted ? true : false}>Clear Answers</button>
-              <button className="button-down" hidden={isSubmitted ? false : true} onClick={handleNextQuestion}>
-                  <a href={refreshPath}>
+              {/* <a href={refreshPath}> */}
+              <button className="button-down" hidden={isSubmitted ? false : true} onClick={reloadPage}>
+                  
                      Next Question
-                  </a>
               </button>
-
+                  {/* </a> */}
             </div>
           </div>
         </div>
