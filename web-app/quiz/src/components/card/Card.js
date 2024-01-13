@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Typography } from "@material-ui/core";
 import "./Card.css";
-import Logo from './logo.png'
 import Header from '../header/Header'
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
@@ -67,10 +66,7 @@ export const CardQuiz = (props) => {
   }
 
   const isAnswerCorrect = (answer) => {
-    if (isAnswerClicked(answer) && answer.correct === "true") {
-      return true;
-    }
-    if (!isAnswerClicked(answer) && answer.correct === "false") {
+    if (answer.correct === "true") {
       return true;
     }
     return false;
@@ -93,15 +89,12 @@ export const CardQuiz = (props) => {
   }
 
   return (
-    <>
+    <div className="whole-page">
       <Header subject={subject} />
       <div className="page-container">
         <div className="card-container">
-          <div className="logo">
-            <img src={Logo} alt="logo" style={{ width: "35%", maxWidth: "300px" }}></img>
-          </div>
           <div className="question">
-            <Typography variant="h5">{question}</Typography>
+            {question}
           </div>
           <div className="answers-container">
             {answers.map((answer) => (
@@ -111,6 +104,7 @@ export const CardQuiz = (props) => {
                   onClick={() => handleAnswerClick(answer)}
                   style={{ cursor: "pointer" }}
                 >
+                  <div className={`square-container${isAnswerClicked(answer) ? "-clicked" : ""}`}></div>
                   {answer.ans}
                 </button>
               </div>
@@ -127,7 +121,7 @@ export const CardQuiz = (props) => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
