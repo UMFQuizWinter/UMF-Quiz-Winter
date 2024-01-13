@@ -11,7 +11,7 @@ import Header from '../header/Header'
 
 export const CardQuiz = (props) => {
   const subject = props.subject;
-  console.log("sub: ", subject) 
+  // console.log("sub: ", subject)
   const [question, setQuestion] = useState("");
   const [answers, setAnswers] = useState([]);
   const [selectedAnswers, setSelectedAnswers] = useState([]);
@@ -49,40 +49,40 @@ export const CardQuiz = (props) => {
   }
 
   const handleAnswerClick = (answer) => {
-    console.log("Answer: ", answer.ans, answer.correct)
-    if (selectedAnswers.includes(answer)){
-        setSelectedAnswers(removeElement(selectedAnswers));
+    console.log("Answer: ", answer.ans, "Is correct: ", answer.correct)
+    if (selectedAnswers.includes(answer)) {
+      setSelectedAnswers(removeElement(selectedAnswers, answer));
     }
-    else{
-        setSelectedAnswers([...selectedAnswers, answer]);
+    else {
+      setSelectedAnswers([...selectedAnswers, answer]);
     }
-      
+
   };
 
   const isAnswerClicked = (answer) => {
-    if (selectedAnswers.includes(answer)){
-        return true;
+    if (selectedAnswers.includes(answer)) {
+      return true;
     }
     return false;
   }
 
   const isAnswerCorrect = (answer) => {
-    if(isAnswerClicked(answer) && answer.correct==="true"){
-        return true;
+    if (isAnswerClicked(answer) && answer.correct === "true") {
+      return true;
     }
-    if(!isAnswerClicked(answer) && answer.correct==="false"){ 
-        return true; 
+    if (!isAnswerClicked(answer) && answer.correct === "false") {
+      return true;
     }
     return false;
   }
   const cuteAlerts = ["You're doing great! Keep going!", "Acesta este semnul tau ca vei trece la anatomie.", "Gandeste-te doar la cat o sa bei dupa sesiune..."]
   const handleSubmit = () => {
-    
+
     setIsSubmitted(true);
     const randomIndex = Math.floor(Math.random() * 4400);
     const randomAlertIndex = Math.floor(Math.random() * cuteAlerts.length);
-    if(randomIndex % 13 === 0){
-        alert(cuteAlerts[randomAlertIndex])
+    if (randomIndex % 13 === 0) {
+      alert(cuteAlerts[randomAlertIndex])
     }
   };
   const handleClearAnswers = () => {
@@ -94,40 +94,40 @@ export const CardQuiz = (props) => {
 
   return (
     <>
-    <Header subject={subject}/>
-    <div className="page-container">
-          <div className="card-container">
-            <div className="logo">
-                <img src={Logo} alt="logo" style={{width: "35%", maxWidth: "300px"}}></img>
-            </div>
-            <div className="question">
-              <Typography variant="h5">{question}</Typography>
-            </div>
-            <div className="answers-container">
-              {answers.map((answer) => (
-                <div key={answer.ans}>
-                  <button
-                    className={`answer-button${isAnswerClicked(answer) ? "-clicked" : ""}${isSubmitted ? isAnswerCorrect(answer) ? "-correct" : "-wrong": ""}`}
-                    onClick={() => handleAnswerClick(answer)}
-                    style={{ cursor: "pointer" }}
-                  >
-                    {answer.ans}
-                  </button>
-                </div>
-              ))}
-            </div>
-            <div className="buttons-down-container">
-              <button className="button-down" hidden={isSubmitted ? true : false} onClick={handleSubmit}>
-                {isSubmitted ? "Next Question" : "Submit"}
-              </button>
-              <button className="button-down" onClick={handleClearAnswers} hidden={isSubmitted ? true : false}>Clear Answers</button>
-              <button className="button-down" hidden={isSubmitted ? false : true} onClick={reloadPage}>        
-                     Next Question
-              </button>
-            </div>
+      <Header subject={subject} />
+      <div className="page-container">
+        <div className="card-container">
+          <div className="logo">
+            <img src={Logo} alt="logo" style={{ width: "35%", maxWidth: "300px" }}></img>
+          </div>
+          <div className="question">
+            <Typography variant="h5">{question}</Typography>
+          </div>
+          <div className="answers-container">
+            {answers.map((answer) => (
+              <div key={answer.ans}>
+                <button
+                  className={`answer-button${isAnswerClicked(answer) ? "-clicked" : ""}${isSubmitted ? isAnswerCorrect(answer) ? "-correct" : "-wrong" : ""}`}
+                  onClick={() => handleAnswerClick(answer)}
+                  style={{ cursor: "pointer" }}
+                >
+                  {answer.ans}
+                </button>
+              </div>
+            ))}
+          </div>
+          <div className="buttons-down-container">
+            <button className="button-down" hidden={isSubmitted ? true : false} onClick={handleSubmit}>
+              {isSubmitted ? "Next Question" : "Submit"}
+            </button>
+            <button className="button-down" onClick={handleClearAnswers} hidden={isSubmitted ? true : false}>Clear Answers</button>
+            <button className="button-down" hidden={isSubmitted ? false : true} onClick={reloadPage}>
+              Next Question
+            </button>
           </div>
         </div>
-        </>
+      </div>
+    </>
   );
 };
 
