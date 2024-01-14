@@ -86,7 +86,7 @@ export const CardQuiz = (props) => {
     }
     return false;
   }
-  const cuteAlerts = ["You're doing great! Keep going!", "Acesta este semnul tau ca vei trece la anatomie.", "Gandeste-te doar la cat o sa bei dupa sesiune..."]
+  const cuteAlerts = ["You're doing great! Keep going!", "Acesta este semnul tau ca vei trece aceasta materie.", "Gandeste-te doar la cat o sa bei dupa sesiune...", "Unii cu sapa, voi cu mapa!", "Macar stii sigur ca nu vei lucra la mega."]
   const handleSubmit = () => {
     setIsSubmitted(true);
     countValidAnswers();

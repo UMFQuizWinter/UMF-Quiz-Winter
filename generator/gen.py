@@ -1,7 +1,7 @@
 import csv
 
 data = []
-with open("./data/anato-2022w-results.csv", 'r', encoding="utf-8") as file:
+with open("./data/fizio2-2022w.csv", 'r', encoding="utf-8") as file:
     csvreader = csv.reader(file)
     for row in csvreader:
         # print(row)
@@ -105,7 +105,7 @@ def clean_up_string(str):
 #         i = clean_up_string(i)
 #         print(i)
 #
-with open('data.json', 'w', encoding="utf-8") as file:
+with open('data_fizio.json', 'w', encoding="utf-8") as file:
     file.write('{ \n "entries" : [ \n')
     for i in range(0, len(questions)):
         file.write('{ \n')
