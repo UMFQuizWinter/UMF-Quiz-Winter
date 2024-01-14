@@ -1,4 +1,5 @@
-import Logo from './logo.png'
+import Logo from './logo.png';
+import Simbol from './logo_simbol.png';
 import { Link } from "react-router-dom";
 import "./Picker.css";
 
@@ -10,6 +11,7 @@ export const Picker = () => {
         <div className="image-container">
           <img src={Logo} alt="logo" style={{}}></img>
         </div>
+
         <div className="page">
           <button className="subject-button">
             <Link to="/UMF-Quiz-Winter/card/anato">
@@ -21,11 +23,11 @@ export const Picker = () => {
               Diabet
             </Link>
           </button>
-          {/* <button className="subject-button">
+          <button className="subject-button">
             <Link to="/UMF-Quiz-Winter/card/fizio">
               Fiziologie
             </Link>
-          </button> */}
+          </button>
         </div>
       </div>
     </>

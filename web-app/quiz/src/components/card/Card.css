@@ -121,14 +121,14 @@ button{
     padding: 1em;
     border-radius: 1em;
     text-align: center;
-    font-size: 1.3em;
+    font-size: 1em;
     color: white;
     font-weight: 800;
 }
 .answers-container{
     display: flex;
     flex-direction: column;
-    height: 80%;
+    /* height: 80%; */
     justify-content: space-around;
     background-color:rgba(255, 255, 255, 0.2);
     padding: 0.5em;

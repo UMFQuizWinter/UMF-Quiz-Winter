@@ -1,6 +1,7 @@
 .subject-button{
     height: 5em;
     width: 16em;
+    border: 1px solid black;
 }
 .page{
     height: 60%;
@@ -26,5 +27,5 @@ a{
     background-color: rgba(32,28,92,1);
     height: 100%;
     display: grid;
-    grid-template-rows: 20% 90%;
+    grid-template-rows: 20% 80%;
 }

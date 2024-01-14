@@ -12,3 +12,15 @@
 7. Add route to the subject in the App.js file
 
 It should be working!
+
+### How to run the node app
+```
+cd UMF-Quiz-Winter/web-app/quiz
+npm run start
+```
+
+### How to deploy to [Sesiune Smasher](https://umfquizwinter.github.io/UMF-Quiz-Winter/)
+```
+npm run deploy
+cd UMF-Quiz-Winter/web-app/quiz
+```
