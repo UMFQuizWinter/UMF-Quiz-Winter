@@ -6,23 +6,28 @@ import "./Picker.css";
 export const Picker = () => {
   return (
     <>
-    <div className="main-container">
+      <div className="main-container">
         <div className="image-container">
-        <img src={Logo} alt="logo" style={{width: "60%", maxWidth: "300px"}}></img> 
+          <img src={Logo} alt="logo" style={{}}></img>
         </div>
         <div className="page">
-        <button className="subject-button">
+          <button className="subject-button">
             <Link to="/UMF-Quiz-Winter/card/anato">
-            Anatomie
+              Anatomie
             </Link>
-        </button>
-        <button className="subject-button">
+          </button>
+          <button className="subject-button">
             <Link to="/UMF-Quiz-Winter/card/diabet">
-            Diabet
+              Diabet
             </Link>
-        </button>
+          </button>
+          {/* <button className="subject-button">
+            <Link to="/UMF-Quiz-Winter/card/fizio">
+              Fiziologie
+            </Link>
+          </button> */}
         </div>
-    </div>
+      </div>
     </>
   );
 };

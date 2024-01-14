@@ -3,13 +3,15 @@
     text-align: right;
     /* padding: 1.5em; */
     padding-right: 1em;
-    font-size: 1em;
+    font-size: 0.6em;
     font-weight: 700;
     font-family: 'Montserrat', sans-serif;
 }
 .header-container{
     display: flex;
-    background-color: rgba(182,113,251,0.3);
+    background-color: rgba(32,28,92,1);
+
+    /* background-color: rgba(182,113,251,0.3); */
     width: 100%;
     justify-content: center;
 }
@@ -30,11 +32,14 @@
       background-color: #fff; 
 }
 .back-icon{
-    filter:invert(1);
+    /* filter:invert(1); */
     display: flex;
     align-items: center;
     justify-content: left;
     padding-left: 1em;
+    font-size: 0.6em;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
 
 }
 .logo{

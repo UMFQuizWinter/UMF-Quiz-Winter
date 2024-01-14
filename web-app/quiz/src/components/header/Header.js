@@ -7,12 +7,16 @@ export const Header = (props) => {
     <div className="header-container">
       <div className="header-mini">
         <a href="/UMF-Quiz-Winter">
-          <div className="back-icon"><img src={BackIcon} alt="back-icon" style={{ width: "20%" }}></img></div>
+          <div className="back-icon">
+            {/* <img src={BackIcon} alt="back-icon" style={{ width: "20%" }}>
+            </img> */}
+            back
+          </div>
         </a>
         <div className="logo">
           <img src={Logo} alt="logo" style={{ width: "100%", maxWidth: "300px" }}></img>
         </div>
-        {/* <div className="subject">{props.subject === "anato" ? "Anatomie" : "Diabet"}</div> */}
+        <div className="subject">{props.subject}</div>
       </div>
     </div>
 
