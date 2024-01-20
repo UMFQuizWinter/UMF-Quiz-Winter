@@ -1,0 +1,15 @@
+.coming{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2em;
+}
+.page{
+    height: 100%;
+}
+.main-page{
+    height: 100%;
+    display: grid;
+    grid-template-rows: 7% 93%;
+}
