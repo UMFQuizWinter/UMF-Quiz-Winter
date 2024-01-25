@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/UMF-Quiz-Winter/static/css/main.d31e18ec.css",
-    "main.js": "/UMF-Quiz-Winter/static/js/main.ff9bfb4e.js",
+    "main.js": "/UMF-Quiz-Winter/static/js/main.db2dbb61.js",
     "static/media/logo_incognito.png": "/UMF-Quiz-Winter/static/media/logo_incognito.de3f55116df6cd68b7f1.png",
     "static/media/logo.png": "/UMF-Quiz-Winter/static/media/logo.4cf406be86fc587b5b06.png",
     "index.html": "/UMF-Quiz-Winter/index.html",
     "main.d31e18ec.css.map": "/UMF-Quiz-Winter/static/css/main.d31e18ec.css.map",
-    "main.ff9bfb4e.js.map": "/UMF-Quiz-Winter/static/js/main.ff9bfb4e.js.map"
+    "main.db2dbb61.js.map": "/UMF-Quiz-Winter/static/js/main.db2dbb61.js.map"
   },
   "entrypoints": [
     "static/css/main.d31e18ec.css",
-    "static/js/main.ff9bfb4e.js"
+    "static/js/main.db2dbb61.js"
   ]
 }
